@@ -5,10 +5,16 @@
     <title>Каталог</title>
   </head>
   <body class="page-body">
+
+    <!-- Шапка -->
     <header class="page-header">
+
+      <!-- Лого -->
       <a class="navigation-logo" href="index.html">
-        <img class="header-logo" src="" alt="Логотип интернет-магазина 'Device'.">
+        <img class="header-logo" src="images/logos/logo-black.svg" width="145" height="36" alt="Логотип интернет-магазина 'Device'.">
       </a>
+
+      <!-- Главная навигация -->
       <nav class="navigation">
         <ul class="navigation-list navigation-user">
           <li class="navigation-item">
@@ -55,9 +61,13 @@
     </header>
 
     <main class="main-inner">
+
+      <!-- Главный заголовок -->
       <header class="inner-header">
         <h1 class="inner-header-title">Моноподы для селфи</h1>
       </header>
+
+      <!-- Навигация: хлебные крошки -->
       <ul class="breadcrumbs">
         <li class="breadcrumbs-item">
           <a class="breadcrumbs-link" href="index.html">Главная</a>
@@ -72,8 +82,11 @@
 
       <section class="catalog-products">
         <h2 class="visually-hidden">Список товаров с фильтрами</h2>
+
+        <!-- Форма: фильтр -->
         <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="post">
           <h4 class="catalog-subtitle">фильтр:</h4>
+          <!-- Фильтр: цвет -->
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Цвет</legend>
             <ul class="catalog-filter-list">
@@ -109,6 +122,7 @@
               </li>
             </ul>
           </fieldset>
+          <!-- Фильтр: bluetooth -->
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Bluetooth</legend>
             <ul class="catalog-filter-list">
@@ -129,6 +143,7 @@
           <button class="button button-catalog-filter" type="submit">Показать</button>
         </form>
 
+        <!-- Сортировка -->
         <div class="sort-wrapper">
           <h4 class="catalog-subtitle">сортировка:</h4>
           <select class="select-control">
@@ -144,10 +159,11 @@
           </a>
         </div>
 
+        <!-- Список товаров -->
         <ul class="product-list">
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="" alt="Товар: любительская
+              <img class="product-card-image" src="images/catalog/monopod-1.jpg" width="360" height="380" alt="Товар: любительская
   селфи-палка.">
               <div class="product-card-info-wrapper">
                 <h3 class="product-card-title">Любительская селфи-палка</h3>
@@ -157,7 +173,7 @@
           </li>
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="" alt="Товар: профессиональная селфи-палка.">
+              <img class="product-card-image" src="images/catalog/monopod-2.jpg" width="360" height="380" alt="Товар: профессиональная селфи-палка.">
               <div class="product-card-info-wrapper">
                 <h3 class="product-card-title">Профессиональная селфи-палка </h3>
                 <b class="product-card-price">1 500 ₽</b>
@@ -166,7 +182,7 @@
           </li>
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="" alt="Товар: непотопляемая
+              <img class="product-card-image" src="images/catalog/monopod-3.jpg" width="360" height="380" alt="Товар: непотопляемая
   селфи-палка.">
               <div class="product-card-info-wrapper">
                 <h3 class="product-card-title">Непотопляемая
@@ -177,7 +193,7 @@
           </li>
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="" alt="Товар: селфи-палка «Следуй за мной».">
+              <img class="product-card-image" src="images/catalog/monopod-4.jpg" width="360" height="380" alt="Товар: селфи-палка «Следуй за мной».">
               <div class="product-card-info-wrapper">
                 <h3 class="product-card-title">Селфи-палка «Следуй за мной»</h3>
                 <b class="product-card-price">1 500 ₽</b>
@@ -187,6 +203,7 @@
         </ul>
         <button class="button button-more" type="button">Загрузить ещё</button>
 
+        <!-- Пагинация -->
         <div class="pagination-wrapper">
           <a class="button button-pagination" href="#">Назад</a>
           <ul class="pagination">
@@ -210,10 +227,16 @@
         </div>
       </section>
     </main>
-    
+
+    <!-- Подвал -->
     <footer class="page-footer">
-      <img class="footer-logo" src="" alt="Логотип интернет-магазина 'Device'.">
+
+      <!--  Лого  -->
+      <img class="footer-logo" src="images/logos/logo-yellow.svg" width="145" height="36" alt="Логотип интернет-магазина 'Device'.">
+
       <div class="footer-wrapper">
+
+        <!-- Адрес -->
         <section class="footer-contacts-address">
           <h2 class="visually-hidden">Адрес интернет-магазина</h2>
           <address class="footer-address-text">
@@ -222,6 +245,8 @@
             </p>
           </address>
         </section>
+
+        <!-- Навигация -->
         <section class="footer-navigation">
           <h2 class="visually-hidden">Навигация по сайту</h2>
           <ul class="footer-navigation-list">
@@ -236,13 +261,18 @@
             </li>
           </ul>
         </section>
+
+        <!-- Телефон -->
         <section class="footer-contacts-phone">
           <h2 class="visually-hidden">Телефон интернет-магазина</h2>
           <a class="footer-phone-number" href="tel:88128121212">Тел.: +7 (812) 812-12-12</a>
         </section>
       </div>
+
       <div class="footer-wrapper">
         <div class="footer-decoration-line"></div>
+
+        <!-- Социальные сети -->
         <section class="footer-social">
           <h2 class="visually-hidden">Мы в социальных сетях</h2>
           <ul class="footer-social-list">
@@ -263,12 +293,15 @@
             </li>
           </ul>
         </section>
+
+        <!-- Копирайт -->
         <section class="footer-copyright">
           <h2 class="visually-hidden">Копирайт</h2>
           <a class="htmlacademy-link" href="https://htmlacademy.ru/">
             <img class="footer-htmlacademy-logo" src="" alt="Логотип HTML Academy.">
           </a>
         </section>
+
       </div>
     </footer>
   </body>

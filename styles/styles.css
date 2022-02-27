@@ -30,7 +30,16 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
   font-family: Rubik, sans-serif;
   font-size: 18px;
   line-height: 30px;
@@ -56,15 +65,38 @@ body {
 
 /* Header */
 .page-header {
+  width: 1160px;
+  margin: 0 auto;
   color: #000000;
   background-color: #ffe17f;
 }
+
+.header-wrapper {
+  width: 1040px;
+  margin: 0 auto;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navigation-logo {
+  text-decoration: none;
+  color: #000000;
+}
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+}
+
 .navigation-link {
   text-align: center;
   text-decoration: none;
   color: #000000;
 }
-
 
 .logout-link {
   opacity: 0.3;
@@ -80,8 +112,19 @@ body {
 
 /* Main index */
 
+.main-container {
+  flex-grow: 1;
+}
+
 /* Слайдер */
+.promo {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
 .promo-number {
+  margin: 0;
   font-family: Rubik, sans-serif;
   font-size: 180px;
   font-weight: 700;
@@ -106,6 +149,24 @@ body {
 }
 
 /* Категории товаров */
+
+.product-categories {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.product-categories-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.product-categories-item {
+  width: 160px;
+}
 
 .product-categories-link {
   text-decoration: none;
@@ -165,7 +226,33 @@ body {
   background-size: 100% auto;
 }
 
+.services-wrapper {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.services-list {
+  width: 287px;
+  margin: 0;
+  margin-right: 116px;
+  padding: 0;
+}
+
+.services-info {
+  display: none;
+}
+.services-info-current {
+  display: flex;
+}
+
+.services-text {
+  width: 475px;
+  margin-right: 83px;
+}
+
 .services-title {
+  margin: 0;
   font-family: Raleway, sans-serif;
   font-size: 50px;
   line-height: 50px;
@@ -207,6 +294,9 @@ body {
 /* Спецпредложения */
 
 .special-offers {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
   background-color: #f0f0f0;
 }
 
@@ -229,6 +319,9 @@ body {
 }
 
 .special-offers-title {
+  flex-grow: 1;
+  margin: auto;
+  padding: 0;
   font-family: Raleway, sans-serif;
   font-size: 20px;
   line-height: 23px;
@@ -241,6 +334,17 @@ body {
 
 /* О нас, Контакты */
 
+.general-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.about {
+  width: 520px;
+}
+
 .general-info-decoration-line {
   width: 84px;
   height: 7px;
@@ -248,6 +352,7 @@ body {
 }
 
 .section-title {
+  margin: 0;
   font-family: Raleway, sans-serif;
   font-size: 50px;
   line-height: 50px;
@@ -260,6 +365,10 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #000000;
+}
+
+.contacts {
+  width: 532px;
 }
 
 .contacts-subtitle {
@@ -280,6 +389,30 @@ body {
   background-color: #f0f0f0;
 }
 
+.subscribe-wrapper {
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.subscribe-wrapper-row {
+  display: flex;
+}
+
+.subscribe-title {
+  width: 348px;
+  margin-right: 252px;
+  margin-left: 10px;
+}
+
+.subscribe-text {
+  width: 560px;
+}
+
+.subscribe-form {
+  width: 811px;
+  margin-right: auto;
+}
+
 /* Подвал */
 .page-footer {
   font-size: 16px;
@@ -288,8 +421,30 @@ body {
   color: #ffffff;
 }
 
+.page-footer-wrapper {
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.page-footer-wrapper-row {
+  display: flex;
+  justify-content: space-between;
+}
+
 .page-footer a {
   color: #ffffff;
+}
+
+.footer-contacts-address {
+  width: 234px;
+}
+
+.footer-address {
+  font-style: normal;
+}
+/* Ширину сделал больше с расчетом возможности добавления страниц*/
+.footer-navigation {
+  width: 610px;
 }
 
 .footer-navigation-link {
@@ -301,15 +456,22 @@ body {
   text-decoration: none;
 }
 
-
-.footer-address {
-  font-style: normal;
+.footer-contacts-phone {
+  width: 175px;
 }
 
 .footer-decoration-line {
   width: 80px;
   height: 7px;
   background-color: #ffc500;
+}
+/* Ширину сделал больше с расчетом возможности добавления иконок новых социальных сетей*/
+.footer-social {
+  width: 315px;
+}
+
+.footer-copyright {
+  width: 115px;
 }
 
 /* Main catalog */
@@ -319,12 +481,22 @@ body {
   color: #000000;
 }
 
+.inner-header-wrapper {
+  width: 1040px;
+  margin: 0 auto;
+}
+
 .inner-header-title {
   font-family: Raleway, sans-serif;
   font-size: 50px;
   line-height: 50px;
   font-weight: 800;
   color: #000000;
+}
+
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
 }
 
 .breadcrumbs-link {
@@ -336,6 +508,28 @@ body {
 
 .catalog-products {
   background-color: #f0f0f0;
+}
+
+.catalog-wrapper {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.catalog-filter {
+  width: 220px;
+  margin-right: 40px;
+  margin-left: 60px;
+}
+
+.catalog-right-column-wrapper {
+  width: 840px;
+}
+
+.sort-wrapper {
+  display: flex;
+  width: 760px;
+  margin: 0 auto;
 }
 
 .catalog-subtitle {
@@ -354,7 +548,15 @@ body {
 }
 
 .products-wrapper {
+  box-sizing: border-box;
+  width: 840px;
+  padding: 70px 40px 78px 40px;
   background-color: #ffffff;
+}
+
+.product-list {
+  margin: 0;
+  padding: 0;
 }
 
 .product-card-link {
@@ -391,3 +593,4 @@ body {
   color: #444444;
   opacity: 0.3;
 }
+

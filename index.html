@@ -14,7 +14,9 @@
         <!-- Главная навигация -->
         <nav class="navigation">
           <!-- Лого -->
-          <img class="header-logo" src="images/logos/logo-black.svg" width="145" height="36" alt="Логотип интернет-магазина 'Device'.">
+<!--          <div class="header-logo-wrapper">-->
+            <img class="header-logo" src="images/logos/logo-black.svg" width="145" height="36" alt="Логотип интернет-магазина 'Device'.">
+<!--          </div>-->
 
           <ul class="navigation-list navigation-user">
             <li class="navigation-item">
@@ -31,13 +33,21 @@
               </form>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="#">Войти</a>
+              <ul class="navigation-list navigation-login">
+                <li class="navigation-item">
+                  <a class="navigation-link" href="#">Войти</a>
+                </li>
+              </ul>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="#">Сравнить</a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="#">Корзина</a>
+              <ul class="navigation-list navigation-user-products">
+                <li class="navigation-item">
+                  <a class="navigation-link" href="#">Сравнить</a>
+                </li>
+                <li class="navigation-item">
+                  <a class="navigation-link" href="#">Корзина</a>
+                </li>
+              </ul>
             </li>
           </ul>
           <ul class="navigation-list navigation-site">
@@ -65,7 +75,7 @@
 
       <!-- Слайдер -->
       <section class="promo">
-        <h2 class="visually-hidden" hidden>Промо-товары</h2>
+        <h2 class="visually-hidden">Промо-товары</h2>
         <div class="promo-photo-wrapper">
           <img class="slider-image" src="images/promo/slider-1.png" width="560" height="560" alt="Квадрокоптер с лазером.">
           <button class="slider-button slider-prev" type="button">
@@ -106,17 +116,21 @@
             </ol>
           </div>
           <dl class="promo-stats">
-            <dt class="promo-stats-number">800 м</dt>
-            <dd class="promo-stats-description">Дальность полета</dd>
-            <dt class="promo-stats-number">50 м</dt>
-            <dd class="promo-stats-description">Радиус поражения</dd>
+            <div class="promo-stats-wrapper">
+              <dt class="promo-stats-number">800 м</dt>
+              <dd class="promo-stats-description">Дальность полета</dd>
+            </div>
+            <div class="promo-stats-wrapper">
+              <dt class="promo-stats-number">50 м</dt>
+              <dd class="promo-stats-description">Радиус поражения</dd>
+            </div>
           </dl>
         </div>
       </section>
 
       <!-- Категории товаров -->
       <section class="product-categories">
-        <h2 class="visually-hidden" hidden>Ссылки на категории товаров в каталоге</h2>
+        <h2 class="visually-hidden">Ссылки на категории товаров в каталоге</h2>
         <ul class="product-categories-list">
           <li class="product-categories-item">
             <a class="product-categories-link" href="catalog.html">
@@ -166,17 +180,17 @@
           <ul class="services-list">
             <li class="services-item">
               <button class="button button-services button-services-current" type="button">
-                Доставка
+                <span>Доставка</span>
               </button>
             </li>
             <li class="services-item">
               <button class="button button-services" type="button">
-                Гарантия
+                <span>Гарантия</span>
               </button>
             </li>
             <li class="services-item">
               <button class="button button-services" type="button">
-                Кредит
+                <span>Кредит</span>
               </button>
             </li>
           </ul>
@@ -219,9 +233,13 @@
 
       <!-- Спецпредложения -->
       <section class="special-offers">
+        <div class="special-offers-wrapper">
           <div class="special-offers-icon special-offers-icon-delivery"></div>
-          <p class="special-offers-title">Доставим редкий товар под заказ</p>
+          <p class="special-offers-title">
+            Доставим редкий товар под заказ
+          </p>
           <div class="special-offers-icon special-offers-info"></div>
+        </div>
       </section>
 
       <div class="general-info-wrapper">
@@ -348,7 +366,9 @@
         </div>
 
         <div class="page-footer-wrapper-row">
-          <div class="footer-decoration-line"></div>
+          <div class="footer-decoration-line-wrapper">
+            <div class="footer-decoration-line"></div>
+          </div>
 
           <!-- Социальные сети -->
           <section class="footer-social">

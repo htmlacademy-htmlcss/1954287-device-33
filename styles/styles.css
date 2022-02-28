@@ -46,6 +46,18 @@ body {
   background-color: #ffffff;
   color: #444444;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .button {
   font-family: Raleway, sans-serif;
   font-size: 18px;
@@ -66,14 +78,15 @@ body {
 /* Header */
 .page-header {
   width: 1160px;
-  margin: 0 auto;
+  height: 300px;
+  margin: 40px auto 0;
   color: #000000;
   background-color: #ffe17f;
 }
 
 .header-wrapper {
   width: 1040px;
-  margin: 0 auto;
+  margin: -22px auto 0;
 }
 
 .navigation {
@@ -82,17 +95,48 @@ body {
   justify-content: space-between;
 }
 
+.header-logo {
+  margin-bottom: 30px;
+}
+
 .navigation-logo {
   text-decoration: none;
   color: #000000;
 }
 
 .navigation-list {
+  display: flex;
   margin: 0;
   padding: 0;
+  list-style-type: none;
+}
+
+.navigation-user {
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.search-form {
+  width: 517px;
+
+}
+
+.navigation-login {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 230px;
+}
+
+.navigation-user-products {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 240px;
 }
 
 .navigation-link {
+  display: block;
   text-align: center;
   text-decoration: none;
   color: #000000;
@@ -102,12 +146,31 @@ body {
   opacity: 0.3;
 }
 
+.navigation-site {
+  height: 50px;
+  align-items: center;
+}
+
 .navigation-site .navigation-link {
   font-family: Raleway, sans-serif;
   line-height: 21px;
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+.navigation-site .navigation-item:not(:last-child) {
+  margin-right: 45px;
+}
+
+.navigation-site .navigation-item:first-child {
+  margin-right: auto;
+}
+
+.navigation-catalog {
+  width: 293px;
+  padding: 0;
+  text-align: left;
 }
 
 /* Main index */
@@ -120,18 +183,40 @@ body {
 .promo {
   display: flex;
   width: 1160px;
-  margin: 0 auto;
+  margin: 0 auto 70px;
 }
 
+.promo-photo-wrapper {
+  margin-top: -150px;
+  margin-right: 40px;
+}
+
+/* Временное решение для корректности построения микросетки помо секции*/
+.slider-button {
+  display: none;
+}
+
+.promo-info-wrapper {
+  /*margin-top: -57px;*/
+}
 .promo-number {
-  margin: 0;
+  display: block;
+  width: 250px;
+  height: 135px;
+  margin: -121px 49px 0 auto;
+  padding: 0;
+  text-align: right;
   font-family: Rubik, sans-serif;
   font-size: 180px;
+  line-height: 135px;
   font-weight: 700;
   color: #ffffff;
 }
 
+
 .promo-slogan {
+  margin: -46px 0 29px;
+  padding: 0;
   font-family: Raleway, sans-serif;
   font-size: 50px;
   line-height: 50px;
@@ -139,12 +224,43 @@ body {
   color: #000000;
 }
 
+.promo-description {
+  margin: 0;
+}
+
+.promo-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 61px;
+  margin-bottom: 59px;
+}
+
+.slider-pagination {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.promo-stats {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 38px;
+  padding: 0;
+}
+
+.promo-stats-wrapper:not(:last-child) {
+  margin-right: 20px;
+}
+
 .promo-stats-number {
+  margin-bottom: 12px;
   font-size: 36px;
   color: #000000;
 }
 
 .promo-stats-description {
+  margin: 0;
   font-size: 16px;
 }
 
@@ -152,20 +268,26 @@ body {
 
 .product-categories {
   display: flex;
+  flex-wrap: wrap;
   width: 1160px;
-  margin: 0 auto;
+  margin: 0 auto 172px;
 }
-
 .product-categories-list {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
+
 
 .product-categories-item {
   width: 160px;
+}
+
+.product-categories-item:not(:nth-child(6n)) {
+  margin-right: 40px;
 }
 
 .product-categories-link {
@@ -174,15 +296,19 @@ body {
 }
 
 .product-categories-title {
+  min-height: 60px;
+  margin: 0;
   font-family: Raleway, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .product-categories-wrapper {
   width: 160px;
   height: 160px;
+  margin-bottom: 33px;
   background-color: #ffe17f;
   background-position: center;
   background-repeat: no-repeat;
@@ -222,21 +348,32 @@ body {
 /* Услуги */
 
 .services {
+  display:flex;
+  width: 100%;
+  height: 289px;
+  margin-bottom: 70px;
   background-color: #f0f0f0;
-  background-size: 100% auto;
 }
 
 .services-wrapper {
   display: flex;
   width: 1160px;
+  height: 319px;
   margin: 0 auto;
+  margin-top: -102px;
 }
 
 .services-list {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 287px;
   margin: 0;
   margin-right: 116px;
   padding: 0;
+  list-style-type: none;
+  border-right: 7px solid #000000;
 }
 
 .services-info {
@@ -244,6 +381,7 @@ body {
 }
 .services-info-current {
   display: flex;
+  align-items: center;
 }
 
 .services-text {
@@ -253,6 +391,7 @@ body {
 
 .services-title {
   margin: 0;
+  margin-bottom: 34px;
   font-family: Raleway, sans-serif;
   font-size: 50px;
   line-height: 50px;
@@ -260,10 +399,31 @@ body {
   color: #000000;
 }
 
+.services-description {
+  margin: 0;
+}
+
+.services-item:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.button-services {
+  padding: 9px 0 11px;
+
+}
+
 .button-services-current {
+  width: 100%;
   background-color: #000000;
   color: #ffe17f;
 }
+
+.button-services-current span {
+  display: block;
+  width: 160px;
+  text-align: center;
+}
+
 
 .services-icon {
   background-position: center;
@@ -294,9 +454,13 @@ body {
 /* Спецпредложения */
 
 .special-offers {
-  display: flex;
   width: 1160px;
-  margin: 0 auto;
+  margin: 0 auto 70px;
+}
+
+.special-offers-wrapper {
+  display: flex;
+  width: 100%;
   background-color: #f0f0f0;
 }
 
@@ -338,7 +502,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 1160px;
-  margin: 0 auto;
+  margin: 0 auto 80px;
 }
 
 .about {
@@ -348,11 +512,13 @@ body {
 .general-info-decoration-line {
   width: 84px;
   height: 7px;
+  margin-bottom: 40px;
   background-color: #000000;
 }
 
 .section-title {
   margin: 0;
+  margin-bottom: 48px;
   font-family: Raleway, sans-serif;
   font-size: 50px;
   line-height: 50px;
@@ -360,11 +526,23 @@ body {
   color: #000000;
 }
 
+.general-info-text {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
 .about-list {
+  margin: 0;
+  margin-bottom: 40px;
+  padding-left: 36px;
   line-height: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #000000;
+}
+
+.about-item:not(:last-child) {
+  margin-bottom: 19px;
 }
 
 .contacts {
@@ -372,16 +550,30 @@ body {
 }
 
 .contacts-subtitle {
+  margin: 0;
+  margin-bottom: 15px;
   font-size: 24px;
   font-weight: 700;
 }
 
 .contacts-address {
   font-style: normal;
+  margin-bottom: 30px;
+}
+
+.contacts-address-text {
+  margin: 0;
 }
 
 .contacts-phone {
   color: #444444;
+}
+
+.contacts-schedule-list {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  list-style-type: none;
 }
 
 /* Подписка на рассылку */
@@ -392,25 +584,36 @@ body {
 .subscribe-wrapper {
   width: 1160px;
   margin: 0 auto;
+  padding-top: 64px;
+  padding-bottom: 56px;
 }
 
 .subscribe-wrapper-row {
   display: flex;
+  align-items: center;
+}
+
+.subscribe-wrapper-row:not(:last-child) {
+  margin-bottom: 144px;
 }
 
 .subscribe-title {
   width: 348px;
-  margin-right: 252px;
-  margin-left: 10px;
+  margin: 0 252px 0 10px;
 }
 
 .subscribe-text {
+  margin: 0;
   width: 560px;
 }
 
 .subscribe-form {
   width: 811px;
   margin-right: auto;
+}
+
+.subscribe-remark {
+  margin: 0;
 }
 
 /* Подвал */
@@ -424,11 +627,22 @@ body {
 .page-footer-wrapper {
   width: 1160px;
   margin: 0 auto;
+  padding-top: 62px;
+  padding-bottom: 61px;
+}
+
+.footer-logo {
+  margin-bottom: 35px;
 }
 
 .page-footer-wrapper-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.page-footer-wrapper-row:not(:last-child) {
+  margin-bottom: 47px;
 }
 
 .page-footer a {
@@ -442,9 +656,26 @@ body {
 .footer-address {
   font-style: normal;
 }
+
+.footer-address-text {
+  margin: 0;
+}
 /* Ширину сделал больше с расчетом возможности добавления страниц*/
 .footer-navigation {
   width: 610px;
+}
+
+.footer-navigation-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-navigation-item:not(:last-child) {
+  margin-right: 35px;
 }
 
 .footer-navigation-link {
@@ -457,7 +688,13 @@ body {
 }
 
 .footer-contacts-phone {
-  width: 175px;
+  width: 180px;
+  text-align: right;
+}
+
+.footer-decoration-line-wrapper {
+  width: 234px;
+  height: auto;
 }
 
 .footer-decoration-line {
@@ -467,11 +704,34 @@ body {
 }
 /* Ширину сделал больше с расчетом возможности добавления иконок новых социальных сетей*/
 .footer-social {
-  width: 315px;
+  width: 610px;
+}
+
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-social-item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.button-social {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.3;
 }
 
 .footer-copyright {
-  width: 115px;
+  width: 180px;
+  text-align: right;
 }
 
 /* Main catalog */

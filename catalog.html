@@ -8,15 +8,17 @@
   <body class="page-body">
 
     <!-- Шапка -->
-    <header class="page-header">
+    <header class="page-header page-header-inner">
 
       <div class="header-wrapper">
       <!-- Главная навигация -->
       <nav class="navigation">
         <!-- Лого -->
-        <a class="navigation-logo" href="index.html">
-          <img class="header-logo" src="images/logos/logo-black.svg" width="145" height="36" alt="Логотип интернет-магазина 'Device'.">
-        </a>
+        <div class="header-logo-wrapper">
+          <a class="navigation-logo" href="index.html">
+            <img class="header-logo" src="images/logos/logo-black.svg" width="145" height="36" alt="Логотип интернет-магазина 'Device'.">
+          </a>
+        </div>
         <ul class="navigation-list navigation-user">
           <li class="navigation-item">
             <!--элемент навигации с данными поиска: в action - url ссылки, а метод get дополнит url текстом поиска -->
@@ -90,7 +92,7 @@
 
           <!-- Форма: фильтр -->
           <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="post">
-            <h4 class="catalog-subtitle">фильтр:</h4>
+            <h4 class="catalog-subtitle catalog-subtitle-filter">фильтр:</h4>
             <!-- Фильтр: цвет -->
             <fieldset class="catalog-filter-group">
               <legend class="catalog-filter-title">Цвет</legend>
@@ -157,10 +159,10 @@
                 <option value="price">По цене</option>
                 <option value="added">По новизне</option>
               </select>
-              <a class="button button-sort-ascending" href="#">
+              <a class="button button-sort button-sort-ascending" href="#">
                 <span class="visually-hidden">Сортировать по возрастанию</span>
               </a>
-              <a class="button button-sort-descending" href="#">
+              <a class="button button-sort button-sort-descending" href="#">
                 <span class="visually-hidden">Сортировать по убыванию</span>
               </a>
             </div>
@@ -229,8 +231,8 @@
                     <li class="pagination-item">
                       <a class="pagination-link" href="#">15</a>
                     </li>
-                    <a class="button button-pagination" href="#">Вперёд</a>
                   </ul>
+                  <a class="button button-pagination" href="#">Вперёд</a>
                 </div>
 
             </div>
@@ -285,7 +287,9 @@
         </div>
 
         <div class="page-footer-wrapper-row">
-          <div class="footer-decoration-line"></div>
+          <div class="footer-decoration-line-wrapper">
+            <div class="footer-decoration-line"></div>
+          </div>
 
           <!-- Социальные сети -->
           <section class="footer-social">

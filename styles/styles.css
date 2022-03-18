@@ -57,12 +57,14 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 .button {
-  padding: 0;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 0;
   font-family: Raleway, sans-serif;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 20px;
   font-weight: 800;
   text-align: center;
   letter-spacing: 0.2em;
@@ -71,8 +73,40 @@ body {
   color: #000000;
   background-color: transparent;
   border: none;
+  outline: none;
+  cursor: default;
 }
 
+.button:not(.subscribe-button)::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  width: 100%;
+  height: 8px;
+  background-color: #ffe17f;
+  z-index: -1;
+}
+
+.button:hover:not(.button-services-current):not(.subscribe-button) {
+  background-color: #ffe17f;
+}
+
+.button:active:not(.button-services-current):not(.subscribe-button) {
+  background-color: #ffcc33;
+}
+
+.button:focus {
+  outline: 2px solid #af4fff;
+}
+
+.button:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
 
 /* Pages */
 
@@ -127,7 +161,6 @@ body {
 
 .search-form {
   width: 517px;
-
 }
 
 .navigation-login {
@@ -143,10 +176,75 @@ body {
 }
 
 .navigation-link {
+  position: relative;
   display: block;
   text-align: center;
   text-decoration: none;
   color: #000000;
+  cursor: default;
+}
+
+.navigation-link:hover {
+  opacity: 0.6;
+  outline: none;
+}
+
+.navigation-link:active {
+  opacity: 0.3;
+}
+
+.navigation-link:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.navigation-link-login {
+  padding-left: 26px;
+}
+
+.navigation-link-compare {
+  padding-left: 22px;
+}
+
+.navigation-link-basket {
+  padding-left: 43px;
+}
+
+.navigation-link-basket::before {
+  position: absolute;
+  top: 4.5px;
+  left: 0;
+  display: flex;
+  width: 21px;
+  height: 21px;
+  content: "2";
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.navigation-link-basket .navigation-icon {
+  left: 15px;
+}
+
+.navigation-link-login .navigation-icon,
+.navigation-link-compare .navigation-icon,
+.navigation-link-basket .navigation-icon {
+  right: auto;
+  margin: auto 0;
 }
 
 .logout-link {
@@ -175,9 +273,26 @@ body {
 }
 
 .navigation-catalog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 293px;
+  height: 50px;
   padding: 0;
   text-align: left;
+}
+
+.navigation-catalog-toggle {
+  opacity: 0.3;
+}
+
+.navigation-catalog:hover .navigation-catalog-toggle {
+  opacity: 1;
+}
+
+.navigation-catalog:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
 }
 
 /* Main index */
@@ -203,9 +318,6 @@ body {
   display: none;
 }
 
-.promo-info-wrapper {
-  /*margin-top: -57px;*/
-}
 .promo-number {
   display: block;
   width: 250px;
@@ -219,7 +331,6 @@ body {
   font-weight: 700;
   color: #ffffff;
 }
-
 
 .promo-slogan {
   margin: -46px 0 29px;
@@ -238,8 +349,11 @@ body {
 .promo-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 61px;
-  margin-bottom: 59px;
+  margin: 50px 0;
+}
+
+.button-detail {
+  width: 220px;
 }
 
 .slider-pagination {
@@ -298,8 +412,23 @@ body {
 }
 
 .product-categories-link {
+  display: block;
   text-decoration: none;
   color: #000000;
+  outline: none;
+  cursor: default;
+}
+
+.product-categories-link:hover .product-categories-wrapper {
+  background-color: #ffc700;
+}
+
+.product-categories-link:active {
+  opacity: 0.3;
+}
+
+.product-categories-link:focus {
+  outline: 2px solid #af4fff;
 }
 
 .product-categories-title {
@@ -355,11 +484,13 @@ body {
 /* Услуги */
 
 .services {
+  position: relative;
   display:flex;
   width: 100%;
   height: 289px;
   margin-bottom: 70px;
   background-color: #f0f0f0;
+  z-index: 0;
 }
 
 .services-wrapper {
@@ -415,23 +546,22 @@ body {
 }
 
 .button-services {
-  padding: 9px 0 11px;
-
+  width: 160px;
 }
 
 .button-services-current {
   width: 100%;
   background-color: #000000;
   color: #ffe17f;
+  border: none;
 }
 
 .button-services-current span {
   display: block;
   width: 160px;
+  box-sizing: border-box;
   text-align: center;
 }
-
-
 .services-icon {
   background-position: center;
   background-repeat: no-repeat;
@@ -471,7 +601,29 @@ body {
   background-color: #f0f0f0;
 }
 
+.special-offers-wrapper:hover g {
+  opacity: 1;
+}
+
+.special-offers-wrapper:hover .special-offers-icon-delivery {
+  background-color: #ffc700;
+}
+
+.special-offers-wrapper:hover .special-offers-icon-delivery {
+  background-color: #ffc700;
+}
+
+.special-offers-wrapper:active {
+  opacity: 0.3;
+}
+
+.special-offers-wrapper:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
 .special-offers-icon {
+  display: flex;
   width: 125px;
   height: 100px;
   background-position: center;
@@ -484,9 +636,10 @@ body {
   background-color: #ffe17f;
 }
 
-.special-offers-info {
-  background-image: url("/images/icons/icon-information.svg");
-  background-size: 40px 40px;
+.special-offers-icon-info {
+  margin: auto;
+  width: 40px;
+  height: 40px;
 }
 
 .special-offers-title {
@@ -552,6 +705,10 @@ body {
   margin-bottom: 19px;
 }
 
+.button-about-us {
+  width: 270px;
+}
+
 .contacts {
   width: 532px;
 }
@@ -581,6 +738,10 @@ body {
   margin-bottom: 40px;
   padding: 0;
   list-style-type: none;
+}
+
+.button-contact-us {
+  width: 270px;
 }
 
 /* Подписка на рассылку */
@@ -615,15 +776,56 @@ body {
 }
 
 .subscribe-form {
+  display: flex;
   width: 811px;
   margin-right: auto;
 }
 
+.subscribe-button {
+  padding: 15px 36px;
+  line-height: 21px;
+  letter-spacing: 0.2em;
+  border: 3px solid #cecece;
+}
+
+.subscribe-button:hover {
+  border-color: #000000;
+}
+
+.subscribe-button:active {
+  border-color: #cecece;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.subscribe-button:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.subscribe-button:focus {
+  outline-offset: 2px;
+}
+
 .subscribe-remark {
+  position: relative;
   margin: 0;
 }
 
+.subscribe-remark::before {
+  position: absolute;
+  left: -30px;
+  bottom: 0;
+  top: 0;
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin: auto;
+  background-image: url('/images/icons/icon-green-tick.svg');
+  background-repeat: no-repeat;
+}
+
 /* Подвал */
+
 .page-footer {
   font-size: 16px;
   line-height: 20px;
@@ -654,6 +856,7 @@ body {
 
 .page-footer a {
   color: #ffffff;
+  cursor: default;
 }
 
 .footer-contacts-address {
@@ -686,6 +889,8 @@ body {
 }
 
 .footer-navigation-link {
+  position: relative;
+  display: block;
   font-family: Raleway, sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -694,9 +899,50 @@ body {
   text-decoration: none;
 }
 
+.footer-navigation-link:hover {
+  color: #ffc700;
+}
+
+.footer-navigation-link::before {
+  display: none;
+  position: absolute;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #ffc700;
+  content: "";
+}
+
+.footer-navigation-link:hover::before {
+  display: block;
+}
+
+.footer-navigation-link:active {
+  color: #ffc700;
+  opacity: 0.3;
+}
+
+.footer-navigation-link:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
 .footer-contacts-phone {
   width: 180px;
   text-align: right;
+}
+
+.footer-phone-number:hover {
+  color: #ffc700;
+}
+
+.footer-phone-number:active {
+  opacity: 0.3;
+}
+
+.footer-phone-number:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
 }
 
 .footer-decoration-line-wrapper {
@@ -727,13 +973,32 @@ body {
   margin-right: 15px;
 }
 
-.button-social {
-  display: block;
+.footer-social-link {
+  display: flex;
   width: 40px;
   height: 40px;
   background-color: #ffffff;
   border-radius: 50%;
   opacity: 0.3;
+  outline: none;
+}
+
+.footer-social-link:hover {
+  background-color: #ffc700;
+  opacity: 1;
+}
+
+.footer-social-link:active .footer-social-icon {
+  opacity: 0.3;
+}
+
+.footer-social-item:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.footer-social-icon {
+  margin: auto;
 }
 
 .footer-copyright {
@@ -741,6 +1006,23 @@ body {
   text-align: right;
 }
 
+.htmlacademy-link {
+  display: block;
+}
+
+.htmlacademy-link:hover .footer-htmlacademy-logo {
+  fill: #ffffff;
+}
+
+.htmlacademy-link:active .footer-htmlacademy-logo {
+  fill: #ffffff;
+  opacity: 0.3;
+}
+
+.htmlacademy-link:focus .footer-htmlacademy-logo {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
 /* Main catalog */
 .main-inner {
   display: flex;

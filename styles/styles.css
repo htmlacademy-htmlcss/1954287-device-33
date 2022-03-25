@@ -333,6 +333,148 @@ body {
   margin: auto 0;
 }
 
+.popover {
+  position: absolute;
+  z-index: 1;
+  margin-top: 6px;
+  width: 320px;
+  min-height: 218px;
+  margin-left: -127px;
+  box-sizing: border-box;
+  background-color: #000000;
+}
+
+.popover-closed {
+  display: none;
+}
+
+.popover::before {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  content: "";
+  width: 14px;
+  height: 6px;
+  background-image: url("/images/icons/icon-popover-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.popover-content {
+  height: 100%;
+}
+
+.cart-items-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.cart-item {
+  padding: 20px 50px 20px 20px;
+  position: relative;
+  display: flex;
+}
+
+.cart-item-link {
+  display: flex;
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cart-item-link:hover {
+  opacity: 0.6;
+}
+
+.cart-item-link:active {
+  opacity: 0.3;
+}
+
+.cart-item-link:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.cart-item-image {
+  margin-right: 23px;
+}
+
+.cart-item-title {
+  padding: 0;
+  margin: 0;
+}
+
+.icon-delete-cart-item {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+}
+
+.icon-delete-cart-item:hover {
+  opacity: 0.6;
+}
+
+.icon-delete-cart-item:active {
+  opacity: 0.3;
+}
+
+.icon-delete-cart-item:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.cart-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: #1a1a1a;
+}
+
+.cart-items-quantity,
+.cart-items-price {
+  padding: 12px 0;
+}
+
+.cart-items-total-price {
+  font-weight: 400;
+}
+
+.button-open-cart {
+  width: 280px;
+  margin: 20px;
+  padding: 15px 0;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.button-open-cart:hover {
+  background-color: #ffe17f;
+}
+
+.button-open-cart:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.button-open-cart:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.button-open-cart:disabled {
+  color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
 .logout-link {
   opacity: 0.3;
 }
@@ -1326,6 +1468,10 @@ body {
   z-index: 5;
 }
 
+.modal-closed {
+  display: none;
+}
+
 .modal {
   position: relative;
   margin: auto;
@@ -1410,13 +1556,99 @@ body {
 .delivery-form-field {
   width: 100%;
   padding: 20px;
+  padding-right: 45px;
   box-sizing: border-box;
   font-family: Rubik, sans-serif;
   font-size: 16px;
   line-height: 20px;
   border: none;
   background-color: #f0f0f0;
+  background-repeat: no-repeat;
+  background-position: right 24px center;
   outline: none;
+}
+
+.delivery-form-user-name {
+  position: relative;
+}
+
+.delivery-form-user-email {
+  position: relative;
+}
+
+.delivery-form-user-name .delivery-form-field {
+  background-image: url("/images/icons/icon-user.svg");
+  background-size: 13px 12px;
+}
+
+.delivery-form-user-email .delivery-form-field {
+  background-image: url("/images/icons/icon-email.svg");
+  background-size: 15px 12px;
+}
+
+.delivery-form-user-name::after {
+  position: absolute;
+  left: 0;
+  top: 94px;
+  content: "Добавьте имя";
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.delivery-form-user-email::after {
+  position: absolute;
+  left: 0;
+  top: 94px;
+  content: "Забавный у вас адрес";
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.delivery-form-description .delivery-form-field {
+  padding-right: 20px;
+}
+
+.delivery-form-buttons label {
+  position: relative;
+}
+
+.delivery-form-buttons label::after {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin-left: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  content: "";
+  background-image: url("/images/icons/icon-info.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2px 12px;
+  background-color: #ffe17f;
+}
+
+.delivery-form-field::placeholder {
+  color: #000000;
+  opacity: 0.3;
+}
+
+.delivery-form-field:hover {
+  background-color: #dcdcdc;
+}
+
+.delivery-form-field:invalid:not(.quantity-field) {
+  border: 2px solid #ff3d3d
+}
+
+.delivery-form-field:invalid + .delivery-form-user-email::after {
+  color: #ff3d3d
+}
+
+.delivery-form-field:focus:not(.quantity-field) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
 }
 
 .button-modal-quantity {

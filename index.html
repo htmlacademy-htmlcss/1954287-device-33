@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body class="page-body">
@@ -32,7 +33,7 @@
                   placeholder="Поиск по сайту">
                 </div>
                 <div class="navigation-search-link-wrapper">
-                  <button class="navigation-search-link" type="submit" >Найти</button>
+                  <button class="navigation-search-link" type="submit">Найти</button>
                 </div>
               </form>
             </li>
@@ -67,6 +68,53 @@
                     </svg>
                     Корзина
                   </a>
+                  <!-- Поповер корзины -->
+                  <div class="popover popover-cart ">
+                    <div class="popover-content">
+                      <h2 class="visually-hidden">Корзина</h2>
+
+                      <ul class="cart-items-list">
+                        <li class="cart-item">
+                          <a class="cart-item-link" href="catalog.html">
+                            <img class="cart-item-image" src="images/catalog/monopod-1.jpg" width="39" height="43" alt="Товар: любительская
+  селфи-палка.">
+                            <p class="cart-item-title">
+                              Любительская селфи-палка
+                            </p>
+                          </a>
+                          <span class="visually-hidden">Удалить из корзины</span>
+                          <svg class="icon-delete-cart-item" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0.909091L9.09091 0L5 4.09091L0.909091 0L0 0.909091L4.09091 5L0 9.09091L0.909091 10L5 5.90909L9.09091 10L10 9.09091L5.90909 5L10 0.909091Z" fill="white"/>
+                          </svg>
+                        </li>
+                        <li class="cart-item">
+                          <a class="cart-item-link" href="catalog.html">
+                            <img class="cart-item-image" src="images/catalog/monopod-2.jpg" width="39" height="43" alt="Товар: профессиональная селфи-палка.">
+                            <p class="cart-item-title">
+                              Профессиональная селфи-палка
+                            </p>
+                          </a>
+                          <span class="visually-hidden">Удалить из корзины</span>
+                          <svg class="icon-delete-cart-item" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0.909091L9.09091 0L5 4.09091L0.909091 0L0 0.909091L4.09091 5L0 9.09091L0.909091 10L5 5.90909L9.09091 10L10 9.09091L5.90909 5L10 0.909091Z" fill="white"/>
+                          </svg>
+                        </li>
+                      </ul>
+                      <div class="cart-status">
+                        <div class="cart-items-quantity">
+                          <span>Товаров: </span><b class="cart-items-total-price">2</b>
+                        </div>
+                        <div class="cart-items-price">
+                          <span>Сумма: </span><b class="cart-items-total-price">2000 ₽</b>
+                        </div>
+                      </div>
+                      <a class="button button-without-line button-open-cart" href="#">
+                        Открыть корзину
+                      </a>
+
+                    </div>
+                  </div>
+
                 </li>
               </ul>
             </li>
@@ -488,7 +536,7 @@
     </footer>
 
     <!-- Модальное окно -->
-    <div class="modal-container">
+    <div class="modal-container modal-closed">
       <div class="modal modal-delivery">
         <button class="modal-close-button">
           <span class="visually-hidden">Закрыть</span>

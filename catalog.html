@@ -30,7 +30,9 @@
                   type="search"
                   name="search-field"
                   placeholder="Поиск по сайту">
-                <button class="navigation-search-link" type="submit">Найти</button>
+                  <button class="navigation-search-link" type="submit">
+                    Найти
+                  </button>
               </form>
             </li>
 
@@ -128,38 +130,78 @@
           <!-- Форма: фильтр -->
           <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="post">
             <h4 class="catalog-subtitle catalog-subtitle-filter">фильтр:</h4>
+
+            <fieldset class="catalog-filter-group catalog-filter-range">
+              <legend class="catalog-filter-title catalog-filter-range-title">Стоимость</legend>
+
+              <div class="range">
+                <div class="range-scale">
+                  <div class="range-bar" style="left: 0; width: 119px">
+                    <div class="range-toggle-wrapper range-toggle-wrapper-min">
+                      <div class="range-button-wrapper">
+                        <button class="range-toggle" type="button">
+                          <span class="visually-hidden">Изменить минимальную цену.</span>
+                        </button>
+                      </div>
+                      <label class="catalog-filter-label">
+                        <span>от</span>
+                        <input class="range-input" type="number" value="0" name="min-price">
+                      </label>
+                    </div>
+                    <div class="range-toggle-wrapper range-toggle-wrapper-mах">
+                      <div class="range-button-wrapper">
+                        <button class="range-toggle" type="button">
+                          <span class="visually-hidden">Изменить максимальную цену.</span>
+                        </button>
+                      </div>
+                      <label class="catalog-filter-label">
+                        <span>до</span>
+                        <input class="range-input" type="number" value="5000" name="max-price">
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
             <!-- Фильтр: цвет -->
             <fieldset class="catalog-filter-group">
               <legend class="catalog-filter-title">Цвет</legend>
               <ul class="catalog-filter-list">
                 <li class="catalog-filter-item">
-                  <label class="control-label">
-                    <input class="control-input" type="checkbox" name="black" checked>
-                    Черный
+                  <label class="control">
+                    <input class="visually-hidden control-input" type="checkbox" name="black" checked>
+                    <span class="control-mark"></span>
+                    <span class="control-label">Черный</span>
                   </label>
                 </li>
                 <li class="catalog-filter-item">
-                  <label class="control-label">
-                    <input class="control-input" type="checkbox" name="white" checked>
-                    Белый
+                  <label class="control">
+                    <input class="visually-hidden control-input" type="checkbox" name="white" checked>
+                    <span class="control-mark"></span>
+                    <span class="control-label">Белый</span>
                   </label>
                 </li>
                 <li class="catalog-filter-item">
-                  <label class="control-label">
-                    <input class="control-input" type="checkbox" name="blue">
-                    Синий
+                  <label class="control">
+                    <input class="visually-hidden control-input" type="checkbox" name="blue">
+                    <span class="control-mark"></span>
+                    <span class="control-label">Синий</span>
                   </label>
                 </li>
                 <li class="catalog-filter-item">
-                  <label class="control-label">
-                    <input class="control-input" type="checkbox" name="red">
-                    Красный
+                  <label class="control">
+                    <input class="visually-hidden control-input" type="checkbox" name="red">
+                    <span class="control-mark"></span>
+                    <span class="control-label">Красный</span>
                   </label>
                 </li>
                 <li class="catalog-filter-item">
-                  <label class="control-label">
-                    <input class="control-input" type="checkbox" name="pink">
-                    Розовый
+                  <label class="control">
+                    <input class="visually-hidden control-input" type="checkbox" name="pink">
+                    <span class="control-mark"></span>
+                    <span class="control-label">Розовый</span>
                   </label>
                 </li>
               </ul>
@@ -169,15 +211,17 @@
               <legend class="catalog-filter-title">Bluetooth</legend>
               <ul class="catalog-filter-list">
                 <li class="catalog-filter-item">
-                  <label class="control-label">
-                    <input class="control-input" type="radio" name="isBluetooth" value="true" checked>
-                    Есть
+                  <label class="control">
+                    <input class="visually-hidden control-input" type="radio" name="isBluetooth" value="true" checked>
+                    <span class="control-mark"></span>
+                    <span class="control-label">Есть</span>
                   </label>
                 </li>
                 <li class="catalog-filter-item">
-                  <label class="control-label">
-                    <input class="control-input" type="radio" name="isBluetooth" value="false">
-                    Нет
+                  <label class="control">
+                    <input class="visually-hidden control-input" type="radio" name="isBluetooth" value="false">
+                    <span class="control-mark"></span>
+                    <span class="control-label">Нет</span>
                   </label>
                 </li>
               </ul>
@@ -404,5 +448,6 @@
 
       </div>
     </footer>
+
   </body>
 </html>

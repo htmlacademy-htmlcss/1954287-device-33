@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Каталог</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body class="page-body">
@@ -67,13 +68,61 @@
                 </svg>
                 Корзина
               </a>
+              <!-- Поповер корзины -->
+              <div class="popover popover-cart popover-closed">
+                <div class="popover-content">
+                  <h2 class="visually-hidden">Корзина</h2>
+
+                  <ul class="cart-items-list">
+                    <li class="cart-item">
+                      <a class="cart-item-link" href="catalog.html">
+                        <img class="cart-item-image" src="images/catalog/monopod-1.jpg" width="39" height="43" alt="Товар: любительская
+  селфи-палка.">
+                        <p class="cart-item-title">
+                          Любительская селфи-палка
+                        </p>
+                      </a>
+                      <span class="visually-hidden">Удалить из корзины</span>
+                      <svg class="icon-delete-cart-item" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 0.909091L9.09091 0L5 4.09091L0.909091 0L0 0.909091L4.09091 5L0 9.09091L0.909091 10L5 5.90909L9.09091 10L10 9.09091L5.90909 5L10 0.909091Z" fill="white"/>
+                      </svg>
+                    </li>
+                    <li class="cart-item">
+                      <a class="cart-item-link" href="catalog.html">
+                        <img class="cart-item-image" src="images/catalog/monopod-2.jpg" width="39" height="43" alt="Товар: любительская
+  селфи-палка.">
+                        <p class="cart-item-title">
+                          Профессиональная селфи-палка
+                        </p>
+                      </a>
+                      <span class="visually-hidden">Удалить из корзины</span>
+                      <svg class="icon-delete-cart-item" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 0.909091L9.09091 0L5 4.09091L0.909091 0L0 0.909091L4.09091 5L0 9.09091L0.909091 10L5 5.90909L9.09091 10L10 9.09091L5.90909 5L10 0.909091Z" fill="white"/>
+                      </svg>
+                    </li>
+                  </ul>
+                  <div class="cart-status">
+                    <div class="cart-items-quantity">
+                      <span>Товаров: </span><b class="cart-items-total-price">2</b>
+                    </div>
+                    <div class="cart-items-price">
+                      <span>Сумма: </span><b class="cart-items-total-price">2000 ₽</b>
+                    </div>
+                  </div>
+                  <a class="button button-without-line button-open-cart" href="#">
+                    Открыть корзину
+                  </a>
+
+                </div>
+              </div>
+
             </li>
           </ul>
           <ul class="navigation-list navigation-site">
-            <li class="navigation-item">
-              <button class="button navigation-catalog navigation-catalog-closed" type="button">
+            <li class="navigation-item catalog-item">
+              <button class="button button-without-line navigation-catalog" type="button">
                 Каталог товаров
-                <svg class="navigation-catalog-toggle" width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="navigation-catalog-toggle icon-toggle-close" width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="25" cy="25.3889" r="24" stroke="black" stroke-width="2"/>
                   <g clip-path="url(#clip0_17328_681)">
                     <path d="M33 24.3889H26V17.3889H24V24.3889H17V26.3889H24V33.3889H26V26.3889H33V24.3889Z" fill="black"/>
@@ -84,7 +133,33 @@
                     </clipPath>
                   </defs>
                 </svg>
+                <svg class="navigation-catalog-toggle icon-toggle-open" width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path d="M49 25.7778C49 39.0327 38.2548 49.7778 25 49.7778C11.7452 49.7778 1 39.0327 1 25.7778C1 12.523 11.7452 1.77783 25 1.77783C38.2548 1.77783 49 12.523 49 25.7778Z" stroke="black" stroke-width="2"/>
+                    <path d="M33 24.7778H17V26.7778H33V24.7778Z" fill="black"/>
+                  </g>
+                </svg>
               </button>
+              <ul class="subcatalog">
+                <li class="subcatalog-item">
+                  <a class="subcatalog-link" href="catalog.html">Виртуальная реальность</a>
+                </li>
+                <li class="subcatalog-item">
+                  <a class="subcatalog-link" href="catalog.html">Моноподы для селфи</a>
+                </li>
+                <li class="subcatalog-item">
+                  <a class="subcatalog-link" href="catalog.html">Экшн-камеры</a>
+                </li>
+                <li class="subcatalog-item">
+                  <a class="subcatalog-link" href="catalog.html">Фитнес-браслеты</a>
+                </li>
+                <li class="subcatalog-item">
+                  <a class="subcatalog-link" href="catalog.html">Умные часы</a>
+                </li>
+                <li class="subcatalog-item">
+                  <a class="subcatalog-link" href="catalog.html">Квадрокоптеры</a>
+                </li>
+              </ul>
             </li>
             <li class="navigation-item">
               <a class="navigation-link" href="#">Доставка</a>
@@ -121,7 +196,6 @@
           </li>
         </ul>
       </div>
-
 
       <section class="catalog-products">
         <div class="catalog-wrapper">
